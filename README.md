@@ -36,7 +36,7 @@ bun run preview
 │   │   └── contact.astro
 │   └── styles/
 │       └── global.css
-├── astro.config.mjs
+├── astro.config.ts
 ├── package.json
 └── tsconfig.json
 ```
@@ -45,6 +45,7 @@ bun run preview
 
 - **Tailwind CSS v4** - Utility-first styling
 - **Zero JavaScript** by default - ships only what you need
+- **Design System Tokens** - HSL colors, consistent spacing, radius, and shadows
 - **Modern design** with DM Sans & Instrument Serif typography
 - **Fully responsive** - looks great on all devices
 - **SEO ready** - semantic HTML and meta tags included
@@ -53,16 +54,24 @@ bun run preview
 
 ## 🎨 Customization
 
-### Theme Colors
+### Design System
 
-Edit the theme in `src/styles/global.css`:
+Edit the theme in `src/styles/global.css`. The system uses HSL-based semantic tokens for easy theming and dark mode support.
 
 ```css
 @theme {
-  --color-ink: #0f0f0f;
-  --color-paper: #fafaf8;
-  --color-accent: #e63946;
-  --color-muted: #6b6b6b;
+  /* Colors */
+  --color-ink: #1a1a1a;
+  --color-paper: #ffffff;
+  --color-accent: #ff3c00;
+  --color-border: #e5e5e5;
+  
+  /* Typography */
+  --font-sans: 'DM Sans', system-ui, sans-serif;
+  --font-serif: 'Instrument Serif', Georgia, serif;
+  
+  /* UI Properties */
+  --radius: 0; /* 0 for sharp/brutalist, 0.5rem for rounded */
 }
 ```
 
@@ -75,7 +84,11 @@ Create a new `.astro` file in `src/pages/`:
 import Layout from '../layouts/Layout.astro';
 ---
 <Layout title="My Page">
-  <h1 class="text-4xl font-bold">Hello!</h1>
+  <section class="container py-12">
+    <div class="card p-8">
+      <h1 class="section-title">Hello!</h1>
+    </div>
+  </section>
 </Layout>
 ```
 
@@ -90,4 +103,3 @@ Modify the Google Fonts `<link>` in `src/layouts/Layout.astro`.
 - [Astro Documentation](https://docs.astro.build)
 - [Tailwind CSS Documentation](https://tailwindcss.com/docs)
 - [Astro Discord](https://astro.build/chat)
-
