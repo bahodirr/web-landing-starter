@@ -1,0 +1,78 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="About — Surgent" description="Learn more about our mission and team.">
+  <!-- Header -->
+  <section class="py-24 pb-16 text-center bg-gradient-to-b from-ink/[0.02] to-transparent">
+    <div class="max-w-xl mx-auto px-8">
+      <h1 class="font-serif text-4xl md:text-5xl lg:text-6xl font-normal mb-4">About Surgent</h1>
+      <p class="text-xl text-muted">We're building tools to help developers create amazing websites faster.</p>
+    </div>
+  </section>
+
+  <!-- Story -->
+  <section class="py-16 px-8">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid md:grid-cols-2 gap-16 items-center">
+        <div>
+          <h2 class="font-serif text-3xl font-normal mb-6">Our Story</h2>
+          <div class="space-y-4 text-muted leading-relaxed">
+            <p>
+              Surgent started as a simple idea: what if getting a professional website
+              didn't require a technical degree? That question led us here.
+            </p>
+            <p>
+              We believe in the power of simplicity. Modern web design has become 
+              unnecessarily complicated. Our mission is to strip away the noise and 
+              give business owners exactly what they need — results.
+            </p>
+            <p>
+              This Surgent template embodies that philosophy. Clean design, fast performance,
+              and room to grow. Take it, make it yours, build something great.
+            </p>
+          </div>
+        </div>
+        
+        <div class="order-first md:order-last">
+          <div class="aspect-square bg-paper-secondary flex items-center justify-center border border-white/10">
+            <span class="text-9xl text-accent">●</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Values -->
+  <section class="py-24 px-8 bg-ink/[0.02]">
+    <div class="max-w-7xl mx-auto">
+      <h2 class="font-serif text-3xl font-normal mb-12 text-center">What We Value</h2>
+      
+      <div class="grid md:grid-cols-3 gap-8">
+        <article class="bg-paper p-8 rounded-xl border border-black/5">
+          <h3 class="text-lg font-semibold mb-3">Performance First</h3>
+          <p class="text-muted text-sm">Every millisecond matters. We obsess over load times so your customers don't have to wait.</p>
+        </article>
+        
+        <article class="bg-paper p-8 rounded-xl border border-black/5">
+          <h3 class="text-lg font-semibold mb-3">User Experience</h3>
+          <p class="text-muted text-sm">Design should get out of your way. Clear navigation, readable text, and focused content.</p>
+        </article>
+        
+        <article class="bg-paper p-8 rounded-xl border border-black/5">
+          <h3 class="text-lg font-semibold mb-3">Accessibility</h3>
+          <p class="text-muted text-sm">The web is for everyone. We build websites that work for all your potential customers.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-24 px-8 text-center">
+    <div class="max-w-xl mx-auto">
+      <h2 class="font-serif text-4xl font-normal mb-4">Ready to start building?</h2>
+      <p class="text-muted mb-8 text-lg">Get in touch and let's create something amazing together.</p>
+      <a href="/contact" class="btn btn-primary">Contact Us</a>
+    </div>
+  </section>
+</Layout>

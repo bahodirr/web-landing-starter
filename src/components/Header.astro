@@ -1,0 +1,92 @@
+---
+interface Props {
+  currentPath?: string;
+}
+
+const { currentPath = '/' } = Astro.props;
+
+const navLinks = [
+  { href: '/', label: 'Home' },
+  { href: '/about', label: 'About' },
+  { href: '/contact', label: 'Contact' },
+];
+---
+
+<header class="sticky top-0 z-50 bg-paper border-b border-black/10">
+  <nav class="flex items-center justify-between container py-4">
+    <a href="/" class="flex items-center gap-2 font-bold text-xl tracking-tight">
+      <span class="text-accent">●</span>
+      <span>Surgent</span>
+    </a>
+    
+    <!-- Desktop nav -->
+    <ul class="hidden md:flex items-center gap-8">
+      {navLinks.map(link => (
+        <li>
+          <a 
+            href={link.href} 
+            class:list={[
+              "text-sm font-medium transition-colors duration-200",
+              currentPath === link.href ? "text-ink" : "text-muted hover:text-ink"
+            ]}
+          >
+            {link.label}
+          </a>
+        </li>
+      ))}
+      <li>
+        <a href="/contact" class="btn btn-primary px-5 py-2 text-xs uppercase tracking-wide no-underline">
+          Get Started
+        </a>
+      </li>
+    </ul>
+    
+    <!-- Mobile menu button -->
+    <button id="menu-btn" class="md:hidden flex flex-col gap-1.5 p-1 cursor-pointer" aria-label="Toggle menu">
+      <span class="block w-6 h-0.5 bg-ink transition-all duration-300 origin-center"></span>
+      <span class="block w-6 h-0.5 bg-ink transition-all duration-300"></span>
+      <span class="block w-6 h-0.5 bg-ink transition-all duration-300 origin-center"></span>
+    </button>
+  </nav>
+  
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="hidden md:hidden bg-paper border-b border-black/10">
+    <ul class="px-6 py-4 space-y-2">
+      {navLinks.map(link => (
+        <li>
+          <a 
+            href={link.href}
+            class:list={[
+              "block py-2 text-base",
+              currentPath === link.href ? "text-ink font-medium" : "text-muted"
+            ]}
+          >
+            {link.label}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+</header>
+
+<script>
+  const menuBtn = document.getElementById('menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const spans = menuBtn?.querySelectorAll('span');
+  
+  menuBtn?.addEventListener('click', () => {
+    const isOpen = mobileMenu?.classList.toggle('hidden') === false;
+    
+    if (spans) {
+      if (isOpen) {
+        spans[0].style.transform = 'rotate(45deg) translate(4px, 4px)';
+        spans[1].style.opacity = '0';
+        spans[2].style.transform = 'rotate(-45deg) translate(4px, -4px)';
+      } else {
+        spans[0].style.transform = '';
+        spans[1].style.opacity = '';
+        spans[2].style.transform = '';
+      }
+    }
+  });
+</script>

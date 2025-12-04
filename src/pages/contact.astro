@@ -1,0 +1,118 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Contact — Starter" description="Get in touch with us.">
+  <!-- Header -->
+  <section class="py-24 pb-16 text-center bg-gradient-to-b from-white/5 to-transparent">
+    <div class="max-w-xl mx-auto px-8">
+      <h1 class="font-serif text-4xl md:text-5xl lg:text-6xl font-normal mb-4">Get in Touch</h1>
+      <p class="text-xl text-muted">Have a question or want to work together? We'd love to hear from you.</p>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="py-16 pb-32 px-8">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid md:grid-cols-[1fr_1.2fr] gap-16">
+        <!-- Info -->
+        <div>
+          <h2 class="font-serif text-3xl font-normal mb-4">Let's talk</h2>
+          <p class="text-muted leading-relaxed mb-10">
+            Whether you have a project in mind, a question about our work, 
+            or just want to say hello — drop us a message.
+          </p>
+          
+          <div class="space-y-6">
+            <div class="flex gap-4 items-start">
+              <span class="text-2xl w-12 h-12 flex items-center justify-center bg-ink/5 rounded-xl">✉️</span>
+              <div>
+                <h4 class="text-sm font-semibold mb-1">Email</h4>
+                <a href="mailto:hello@example.com" class="text-muted text-sm hover:text-accent transition-colors">hello@example.com</a>
+              </div>
+            </div>
+            
+            <div class="flex gap-4 items-start">
+              <span class="text-2xl w-12 h-12 flex items-center justify-center bg-ink/5 rounded-xl">📍</span>
+              <div>
+                <h4 class="text-sm font-semibold mb-1">Location</h4>
+                <p class="text-muted text-sm">San Francisco, CA</p>
+              </div>
+            </div>
+            
+            <div class="flex gap-4 items-start">
+              <span class="text-2xl w-12 h-12 flex items-center justify-center bg-ink/5 rounded-xl">🕐</span>
+              <div>
+                <h4 class="text-sm font-semibold mb-1">Response Time</h4>
+                <p class="text-muted text-sm">Within 24 hours</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Form -->
+        <form id="contact-form" class="bg-paper-secondary p-8 md:p-10 border border-white/10">
+          <div class="mb-6">
+            <label for="name" class="block text-sm font-medium mb-2 text-muted uppercase tracking-wider text-xs">Name</label>
+            <input 
+              type="text" 
+              id="name" 
+              name="name" 
+              required 
+              placeholder="Your name"
+              class="w-full px-4 py-3 text-base border-b border-white/10 bg-transparent transition-all focus:outline-none focus:border-accent placeholder:text-muted/30"
+            />
+          </div>
+          
+          <div class="mb-6">
+            <label for="email" class="block text-sm font-medium mb-2 text-muted uppercase tracking-wider text-xs">Email</label>
+            <input 
+              type="email" 
+              id="email" 
+              name="email" 
+              required 
+              placeholder="you@example.com"
+              class="w-full px-4 py-3 text-base border-b border-white/10 bg-transparent transition-all focus:outline-none focus:border-accent placeholder:text-muted/30"
+            />
+          </div>
+          
+          <div class="mb-6">
+            <label for="subject" class="block text-sm font-medium mb-2 text-muted uppercase tracking-wider text-xs">Subject</label>
+            <input 
+              type="text" 
+              id="subject" 
+              name="subject" 
+              required 
+              placeholder="What's this about?"
+              class="w-full px-4 py-3 text-base border-b border-white/10 bg-transparent transition-all focus:outline-none focus:border-accent placeholder:text-muted/30"
+            />
+          </div>
+          
+          <div class="mb-8">
+            <label for="message" class="block text-sm font-medium mb-2 text-muted uppercase tracking-wider text-xs">Message</label>
+            <textarea 
+              id="message" 
+              name="message" 
+              rows="5" 
+              required 
+              placeholder="Tell us more..."
+              class="w-full px-4 py-3 text-base border-b border-white/10 bg-transparent transition-all focus:outline-none focus:border-accent placeholder:text-muted/30 resize-y min-h-32"
+            ></textarea>
+          </div>
+          
+          <button type="submit" class="btn btn-primary w-full justify-center uppercase tracking-widest text-xs py-4">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<script>
+  const form = document.getElementById('contact-form') as HTMLFormElement;
+  
+  form?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    alert('Form submitted! (Add your backend logic here)');
+    form.reset();
+  });
+</script>
