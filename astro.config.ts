@@ -6,6 +6,9 @@ export default defineConfig({
   // site: "https://example.com",
   output: "static",
   // integrations: [sitemap()],
+  server: {
+    port: 3000, // Change this to your desired port
+  },
   vite: {
     plugins: [tailwindcss() as any],
   },
