@@ -4,14 +4,15 @@
  
  */
  {
-	"name": "web-landing-starter",
-	"compatibility_date": "2025-04-24",
+  "name": "web-landing-starter",
+  "main": "dist/index.js",
+  "compatibility_date": "2025-04-24",
   "assets": {
-		"binding": "ASSETS",
-		"directory": "./dist"
+    "binding": "ASSETS",
+    "directory": "./dist/client"
   },
-	"observability": {
-		"enabled": true,
+  "observability": {
+    "enabled": true,
     "head_sampling_rate": 0.1
-	}
+  }
 }
