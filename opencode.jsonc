@@ -1,3 +1,6 @@
 {
-  "plugin": ["surgent-plugin"]
+  "$schema": "https://opencode.ai/config.json",
+  "plugin": [
+    "surgent-plugin"
+  ]
 }
