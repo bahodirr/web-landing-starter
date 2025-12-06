@@ -14,6 +14,10 @@ export default defineConfig({
     plugins: [tailwindcss() as any],
     server: {
       host: true,
+      watch: {
+        usePolling: true,
+        interval: 200,
+      },
     },
   },
 });
