@@ -11,6 +11,7 @@
   "dependencies": {
     "@astrojs/sitemap": "^3.6.0",
     "@tailwindcss/vite": "^4.1.17",
+    "apify-client": "^2.21.0",
     "astro": "^5.16.4",
     "tailwindcss": "^4.1.17"
   },

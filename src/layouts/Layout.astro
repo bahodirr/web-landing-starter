@@ -1,7 +1,4 @@
 ---
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-
 interface Props {
   title: string;
   description?: string;
@@ -31,11 +28,9 @@ const currentPath = Astro.url.pathname;
   </head>
   <body>
     <div class="flex flex-col min-h-dvh">
-      <Header currentPath={currentPath} />
       <main class="flex-1">
         <slot />
       </main>
-      <Footer />
     </div>
   </body>
 </html>
