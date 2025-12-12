@@ -1,0 +1,32 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "plugin": [
+    "surgent-plugin"
+  ],
+  "provider": {
+    "anthropic": {
+      "options": {
+        "apiKey": "${SURGENT_API_KEY}",
+        "baseURL": "https://ai.surgent.dev/anthropic"
+      }
+    },
+    "openai": {
+      "options": {
+        "apiKey": "${SURGENT_API_KEY}",
+        "baseURL": "https://ai.surgent.dev/openai"
+      }
+    },
+    "google": {
+      "options": {
+        "apiKey": "${SURGENT_API_KEY}",
+        "baseURL": "https://ai.surgent.dev/google"
+      }
+    },
+    "xai": {
+      "options": {
+        "apiKey": "${SURGENT_API_KEY}",
+        "baseURL": "https://ai.surgent.dev/xai"
+      }
+    }
+  }
+}
