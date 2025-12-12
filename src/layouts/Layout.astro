@@ -1,13 +1,5 @@
 ---
-interface Props {
-  title: string;
-  description?: string;
-}
-
 const { title, description = "A modern web landing starter by Surgent" } = Astro.props;
-
-// Get current path for active nav highlighting
-const currentPath = Astro.url.pathname;
 ---
 
 <style is:global>
