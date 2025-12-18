@@ -26,14 +26,10 @@ bun run preview
 │   └── favicon.svg
 ├── src/
 │   ├── components/
-│   │   ├── Header.astro
-│   │   └── Footer.astro
 │   ├── layouts/
 │   │   └── Layout.astro
 │   ├── pages/
 │   │   ├── index.astro
-│   │   ├── about.astro
-│   │   └── contact.astro
 │   └── styles/
 │       └── global.css
 ├── astro.config.ts
